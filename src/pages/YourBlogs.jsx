@@ -10,7 +10,7 @@ const YourBlogs = () => {
     const [blogs, setblogs] = useState([]);
 
     let getBlogs = async()=>{
-        let res = await axios.get('http://localhost:8080/posts/getSingleUser',{
+        let res = await axios.get('https://threatesbackend.onrender.com/posts/getSingleUser',{
             headers:{
                 'Authorization':ctx.details.token
             }
@@ -24,7 +24,7 @@ const YourBlogs = () => {
     },[])
     const handleDelete = async(ans)=>{
         console.log(ans._id)
-        let res = await axios.delete(`http://localhost:8080/posts/delete/${ans._id}`)
+        let res = await axios.delete(`https://threatesbackend.onrender.com/posts/delete/${ans._id}`)
         let data = res.data
         if(data.success){
             toast.success(data.msg)

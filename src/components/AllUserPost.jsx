@@ -41,7 +41,7 @@ const AllUserPost = (props) => {
   // let commentRef = useRef()
 
   let getAllData = async()=> {
-    let res = await axios.get(`http://localhost:8080/posts/getall`)
+    let res = await axios.get(`https://threatesbackend.onrender.com/posts/getall`)
     let data = res.data;
     console.log(data.data)
     setallPosts(data.data)
@@ -100,7 +100,7 @@ const [selectedEle, setselectedEle] = useState("");
 
         const handleLikes =async(postId)=>{
           console.log(postId)
-          let res = await fetch(`http://localhost:8080/posts/updatelike/${postId}`,{
+          let res = await fetch(`https://threatesbackend.onrender.com/posts/updatelike/${postId}`,{
             method: "Put",
             headers:{
               'content-type':'application/json',

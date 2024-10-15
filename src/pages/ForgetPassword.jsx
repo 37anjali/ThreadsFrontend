@@ -10,7 +10,7 @@ const ForgetPassword = () => {
         let obj={
             email:emailRef.current.value
         }
-        let res = await axios.post(`http://localhost:8080/users/forget-password`,obj);
+        let res = await axios.post(`https://threatesbackend.onrender.com/users/forget-password`,obj);
         let data = res.data
         console.log(data)
       setmsg(data.msg)
